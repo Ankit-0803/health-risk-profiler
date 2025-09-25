@@ -18,9 +18,9 @@ _All API requests should be sent to the above base URL._
 ## Setup Instructions
 
 **Prerequisites**  
-Python 3.8+  
-Tesseract OCR installed and in your system PATH  
-ngrok for public tunneling
+- Python 3.8+  
+- Tesseract OCR installed and in your system PATH  
+- ngrok for public tunneling
 
 **Installation**  
 1. Clone repo  
@@ -40,7 +40,6 @@ ngrok for public tunneling
 **Expose via ngrok**  
 In a new terminal:  
 `ngrok http 8080`  
-_Use the displayed HTTPS URL above as the base for API calls._
 
 ## API Endpoints
 
@@ -81,25 +80,10 @@ curl -X POST https://saul-repoussa-articulately.ngrok-free.dev/analyze-complete
 -H "Content-Type: application/json"
 -d '{"age":42,"smoker":true,"exercise":"rarely","diet":"high sugar"}'
 
-text
-
-## Project Structure
-health-risk-profiler/
-├── app.py # Flask app with endpoints
-├── config.py # Configuration variables
-├── models/ # Modular pipeline components
-├── utils/ # Validation and helper functions
-├── uploads/ # Temporary upload directory
-├── requirements.txt # Python dependencies
-└── README.md # Documentation
-
-text
 
 ## Guardrails & Error Handling
 - **Incomplete profiles** (>50% missing required fields) return  
 {"status":"incomplete_profile","reason":">50% fields missing: [...]"}
-
-text
 - **Invalid or missing** image uploads return clear error JSON (HTTP 400)
 - All endpoints return meaningful error messages and appropriate status codes
 
