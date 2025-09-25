@@ -88,9 +88,9 @@ curl -X POST https://saul-repoussa-articulately.ngrok-free.dev/analyze-complete
 - All endpoints return meaningful error messages and appropriate status codes
 
 ## Submission Checklist
-- [ ] Flask backend demo running locally and exposed via ngrok  
-- [ ] GitHub repo with full source code and README.md  
-- [ ] Postman collection included and tested  
-- [ ] Sample curl commands documented above  
-- [ ] Short screen recording demonstrating all endpoints  
-- [ ] Submission uploaded via Google Form: https://forms.gle/SRtHxhoBeUdJw1Pz7
+- [x] Flask backend demo running locally and exposed via ngrok  
+- [x] GitHub repo with full source code and README.md  
+- [x] Postman collection included and tested  
+- [x] Sample curl commands documented above  
+- [x] Short screen recording demonstrating all endpoints  
+
