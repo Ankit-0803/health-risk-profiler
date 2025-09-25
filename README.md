@@ -53,21 +53,12 @@ source venv/bin/activate
 4. Install dependencies
 pip install -r requirements.txt
 
-text
-
 ### **Run the Backend Locally**
-
 python app.py
 
-text
-
 ### **Expose via ngrok**
-
 In a new terminal:
-
 ngrok http 8080
-
-text
 
 _Use the displayed HTTPS URL above as the base for API calls._
 
@@ -123,8 +114,6 @@ curl -X POST https://saul-repoussa-articulately.ngrok-free.dev/analyze-complete
 -H "Content-Type: application/json"
 -d '{"age":42,"smoker":true,"exercise":"rarely","diet":"high sugar"}'
 
-text
-
 ---
 
 ## **Project Structure**
@@ -138,8 +127,6 @@ health-risk-profiler/
 ├── requirements.txt # Python dependencies
 └── README.md # Project documentation
 
-text
-
 ---
 
 ## **Guardrails & Error Handling**
@@ -150,7 +137,6 @@ text
 "reason":">50% fields missing: [...]"
 }
 
-text
 - **Invalid or missing** image uploads return clear error JSON with HTTP 400.  
 - All endpoints provide meaningful error messages and appropriate status codes.
 
