@@ -1,0 +1,177 @@
+{
+  "info": {
+    "name": "Health Risk Profiler API",
+    "description": "Complete API testing collection for AI-Powered Health Risk Profiler",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://saul-repoussa-articulately.ngrok-free.dev",
+      "description": "Base URL for the API"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/",
+          "host": ["{{base_url}}"],
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "2. Parse Text",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"age\": 42,\n  \"smoker\": true,\n  \"exercise\": \"rarely\",\n  \"diet\": \"high sugar\",\n  \"alcohol\": \"moderate\",\n  \"sleep\": \"poor\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/parse-text",
+          "host": ["{{base_url}}"],
+          "path": ["parse-text"]
+        }
+      }
+    },
+    {
+      "name": "3. Parse Image",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "image",
+              "type": "file",
+              "src": "/path/to/your/test-image.jpg",
+              "description": "Upload a survey image file here"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/parse-image",
+          "host": ["{{base_url}}"],
+          "path": ["parse-image"]
+        }
+      }
+    },
+    {
+      "name": "4. Extract Factors",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"answers\": {\n    \"age\": 42,\n    \"smoker\": true,\n    \"exercise\": \"rarely\",\n    \"diet\": \"high sugar\"\n  }\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/extract-factors",
+          "host": ["{{base_url}}"],
+          "path": ["extract-factors"]
+        }
+      }
+    },
+    {
+      "name": "5. Classify Risk",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"factors\": [\"smoking\", \"poor diet\", \"low exercise\"]\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/classify-risk",
+          "host": ["{{base_url}}"],
+          "path": ["classify-risk"]
+        }
+      }
+    },
+    {
+      "name": "6. Get Recommendations",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"risk_level\": \"high\",\n  \"factors\": [\"smoking\", \"poor diet\", \"low exercise\"]\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/get-recommendations",
+          "host": ["{{base_url}}"],
+          "path": ["get-recommendations"]
+        }
+      }
+    },
+    {
+      "name": "7. Complete Analysis - Text",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"age\": 42,\n  \"smoker\": true,\n  \"exercise\": \"rarely\",\n  \"diet\": \"high sugar\",\n  \"alcohol\": \"moderate\",\n  \"sleep\": \"poor\",\n  \"stress\": \"high\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/analyze-complete",
+          "host": ["{{base_url}}"],
+          "path": ["analyze-complete"]
+        }
+      }
+    },
+    {
+      "name": "8. Low Risk Profile",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"age\": 28,\n  \"smoker\": false,\n  \"exercise\": \"daily\",\n  \"diet\": \"balanced\",\n  \"alcohol\": \"rarely\",\n  \"sleep\": \"good\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/analyze-complete",
+          "host": ["{{base_url}}"],
+          "path": ["analyze-complete"]
+        }
+      }
+    }
+  ]
+}
